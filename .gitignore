@@ -33,4 +33,4 @@ media/
 migrations
 
 #db location
-happ/views/connection.py
+hrapp/views/connection.py
