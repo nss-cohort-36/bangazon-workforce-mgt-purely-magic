@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class TrainingProgram(models.Model):
 
@@ -6,7 +7,7 @@ class TrainingProgram(models.Model):
     start_date = models.DateField()
     end_date = models.DateField()
     capacity = models.IntegerField()
-    trainingProgramId = models.ManyToManyField("Employee", through='TrainingProgramEmployee')
+    
 
     class Meta:
         verbose_name = ("TrainingProgram")
