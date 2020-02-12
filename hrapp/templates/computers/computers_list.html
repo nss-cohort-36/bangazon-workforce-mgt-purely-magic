@@ -1,0 +1,15 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+<h1>Computers</h1>
+
+<ol>
+{% for computer in all_computers %}
+    <li>
+        <p>{{ computer.make }}</p>
+        {% comment %} <link><a href="{% url 'hrapp:computer' computer.id %}"> {{computer.make}} </a></link> {% endcomment %}
+    </li>
+    {% comment %} <button id="detail--{{ computer.id }}">Details</button> {% endcomment %}
+{% endfor %}
+</ol>
+{% endblock content %} 
