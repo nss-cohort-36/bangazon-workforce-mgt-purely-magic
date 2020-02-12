@@ -2,12 +2,13 @@ import sqlite3
 from django.shortcuts import render
 from hrapp.models import Department
 from ..connection import Connection
+from hrapp.models import model_factory
 
 
 def department_list(request):
     if request.method == 'GET':
         with sqlite3.connect(Connection.db_path) as conn:
-            conn.row_factory = sqlite3.Row
+            conn.row_factory = model_factory(Department)
             db_cursor = conn.cursor()
 
             db_cursor.execute("""
@@ -23,20 +24,7 @@ def department_list(request):
             JOIN hrapp_employee e ON d.id = e.department_id;
             """)
 
-            all_departments = []
-            dataset = db_cursor.fetchall()
-
-            for row in dataset:
-                department = Department()
-                department.id = row['department_id']
-                department.department_name = row['department_name']
-                department.budget = row['budget']
-                department.first_name = row['first_name']
-                department.last_name = row['last_name']
-                department.start_date = row['start_date']
-                department.department_id = row['department_id']
-
-                all_departments.append(department)
+            all_departments = db_cursor.fetchall()
 
         template = 'departments/list.html'
         context = {
