@@ -9,7 +9,7 @@ from ..connection import Connection
 
 def get_employee(employee_id):
     with sqlite3.connect(Connection.db_path) as conn:
-        conn.row_factory = model_factory(Book)
+        conn.row_factory = model_factory(Employee)
         db_cursor = conn.cursor()
 
         db_cursor.execute("""
@@ -18,7 +18,6 @@ def get_employee(employee_id):
             au.first_name,
             au.last_name,
             d.department_name
-            
         FROM hrapp_employee e
         JOIN auth_user au ON e.user_id = au.id
         JOIN hrapp_department d ON e.department_id = d.id
