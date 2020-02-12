@@ -1,3 +1,4 @@
+from ..connection import Connection
 import sqlite3
 from django.shortcuts import render
 from hrapp.models import Employee
