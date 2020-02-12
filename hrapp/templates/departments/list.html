@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bangazon</title>
+  </head>
+  <body>
+    <h1>Departments</h1>
+
+    <ol>
+    {% for department in all_departments %}
+        <li>
+            {{ department.department_name }}
+            has a budget of ${{department.budget}}
+            and is staffed by {{department.first_name}} {{department.last_name}}
+        </li>
+    {% endfor %}
+    </ol>
+  </body>
+</html>
