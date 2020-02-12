@@ -1,6 +1,6 @@
 {% comment %} *** This is html for the form the user will use to add an employee to the roster *** {% endcomment %}
 
-{% load staticfiles %}
+{% load static %}
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,15 +23,21 @@
       </fieldset>
       <fieldset>
           <label for="start_date">Start Date: </label>
-          <input id="start_date" type="number" name="start_date">
+          <input id="start_date" type="date" name="start_date">
       </fieldset>
       <fieldset>
-          <label for="is_supervisor">Supervisor: </label>
-          <input id="is_supervisor" type="number" name="is_supervisor">
+          <label for="is_supervisor">Is a Supervisor: </label>
+          <input id="is_supervisor" type="radio" value="Yes">
+          <label for="is_supervisor">Is NOT a Supervisor: </label>
+          <input id="is_supervisor" type="radio" name="No">
       </fieldset>
       <fieldset>
-          <label for="department_id">Department: </label>
-          <input id="department_id" type="text" name="department_id">
+          <label for="department">Department: </label>
+          <select id="location" type="text" name="location">
+                {% for library in all_libraries %}
+                    <option value="{{ library.id }}">{{ library.title }}</option>
+                {% endfor %}
+          </select>
       </fieldset>
 
       <input type="submit" value="Add It" />
