@@ -33,9 +33,9 @@
       </fieldset>
       <fieldset>
           <label for="department">Department: </label>
-          <select id="location" type="text" name="location">
-                {% for library in all_libraries %}
-                    <option value="{{ library.id }}">{{ library.title }}</option>
+          <select id="department" type="text" name="department">
+                {% for department in all_departments %}
+                    <option value="{{ department.id }}">{{ department.name }}</option>
                 {% endfor %}
           </select>
       </fieldset>

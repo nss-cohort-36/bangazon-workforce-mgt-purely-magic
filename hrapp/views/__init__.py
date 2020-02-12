@@ -4,4 +4,5 @@ from .auth.logout import logout_user
 from .connection import Connection
 from .departments.list import department_list
 from .computers.computer_list import computer_list
+from .employees.form import employee_form
 
