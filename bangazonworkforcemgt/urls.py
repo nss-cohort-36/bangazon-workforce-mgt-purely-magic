@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
-from hrapp.models import *
+from hrapp.models import * #this line was added to make my migrations work
 
 urlpatterns = [
     path('admin/', admin.site.urls),

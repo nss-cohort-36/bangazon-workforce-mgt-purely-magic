@@ -1,0 +1,46 @@
+{% comment %} *** This is html for the form the user will use to add an employee to the roster *** {% endcomment %}
+
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Bangazon</title>
+  </head>
+  <body>
+    <h1>Employee Roster</h1>
+
+
+    <form action="{% url 'hrapp:employee_list' %}" method="post">
+      {% csrf_token %}
+      <fieldset>
+          <label for="first_name">First Name: </label>
+          <input id="first_name" type="text" name="first_name">
+      </fieldset>
+      <fieldset>
+          <label for="last_name">Last Name: </label>
+          <input id="last_name" type="text" name="last_name">
+      </fieldset>
+      <fieldset>
+          <label for="start_date">Start Date: </label>
+          <input id="start_date" type="date" name="start_date">
+      </fieldset>
+      <fieldset>
+          <label for="is_supervisor">Is a Supervisor: </label>
+          <input id="is_supervisor" type="radio" value="Yes">
+          <label for="is_supervisor">Is NOT a Supervisor: </label>
+          <input id="is_supervisor" type="radio" name="No">
+      </fieldset>
+      <fieldset>
+          <label for="department">Department: </label>
+          <select id="department" type="text" name="department">
+                {% for department in all_departments %}
+                    <option value="{{ department.id }}">{{ department.name }}</option>
+                {% endfor %}
+          </select>
+      </fieldset>
+
+      <input type="submit" value="Add It" />
+    </form>
+  </body>
+</html>
