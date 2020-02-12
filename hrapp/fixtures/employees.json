@@ -6,7 +6,8 @@
         "first_name": "Steve",
         "last_name": "Brownlee",
         "start_date": "2014-04-05",
-        "is_supervisor": true
+        "is_supervisor": true,
+        "department": 1
       }
     },
     {
@@ -16,7 +17,8 @@
         "first_name": "Joe",
         "last_name": "Shepherd",
         "start_date": "2016-11-03",
-        "is_supervisor": false
+        "is_supervisor": false,
+        "department": 2
       }
     },
     {
@@ -26,7 +28,8 @@
         "first_name": "Jisie",
         "last_name": "David",
         "start_date": "2018-03-10",
-        "is_supervisor": false
+        "is_supervisor": false,
+        "department": 4
       }
     }
 ]
