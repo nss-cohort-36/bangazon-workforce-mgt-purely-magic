@@ -1,6 +1,6 @@
 [
     {
-      "model": "hrapp.training_program",
+      "model": "hrapp.TrainingProgram",
       "pk": 1,
       "fields": {
         "title": "Code of Business Conduct",
@@ -10,7 +10,7 @@
       }
     },
     {
-      "model": "hrapp.training_program",
+      "model": "hrapp.TrainingProgram",
       "pk": 2,
       "fields": {
         "title": "Ergonomics 101",
@@ -20,7 +20,7 @@
       }
     },
     {
-      "model": "hrapp.training_program",
+      "model": "hrapp.TrainingProgram",
       "pk": 3,
       "fields": {
         "title": "HTML and You",
@@ -30,7 +30,7 @@
       }
     },
     {
-      "model": "hrapp.training_program",
+      "model": "hrapp.TrainingProgram",
       "pk": 4,
       "fields": {
         "title": "Django Unchained",
