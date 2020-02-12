@@ -33,7 +33,7 @@ def training_program_list(request):
 
                 all_training_programs.append(trainingprogram)
 
-        template = 'training_program/training_program_list.html'  #folder/file namee
+        template = 'training_program/training_program_list.html'  #folder/file nameee
         context = {
             'all_training_programs': all_training_programs
         }
