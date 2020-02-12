@@ -11,7 +11,7 @@
     <h1>Employee Roster</h1>
 
 
-    <form action="{% url 'hrapp:employees' %}" method="post">
+    <form action="{% url 'hrapp:employee_list' %}" method="post">
       {% csrf_token %}
       <fieldset>
           <label for="first_name">First Name: </label>
