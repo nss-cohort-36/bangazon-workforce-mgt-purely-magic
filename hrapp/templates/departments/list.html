@@ -11,7 +11,7 @@
     <ol>
     {% for department in all_departments %}
         <li>
-            {{ department.department_name }}
+            <a href="{% url 'hrapp:department' department.department_id %}">  {{ department.department_name }} </a>
             has a budget of ${{department.budget}}
             and is staffed by {{department.first_name}} {{department.last_name}}
         </li>
