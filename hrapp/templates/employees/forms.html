@@ -9,31 +9,27 @@
     <h1>Employee Roster</h1>
 
 
-    <form action="{% url 'libraryapp:books' %}" method="post">
+    <form action="{% url 'hrapp:employees' %}" method="post">
       {% csrf_token %}
       <fieldset>
-          <label for="title">Title: </label>
-          <input id="title" type="text" name="title">
+          <label for="first_name">First Name: </label>
+          <input id="first_name" type="text" name="first_name">
       </fieldset>
       <fieldset>
-          <label for="author">Author: </label>
-          <input id="author" type="text" name="author">
+          <label for="last_name">Last Name: </label>
+          <input id="last_name" type="text" name="last_name">
       </fieldset>
       <fieldset>
-          <label for="year_published">Year of publication: </label>
-          <input id="year_published" type="number" name="year_published">
+          <label for="start_date">Start Date: </label>
+          <input id="start_date" type="number" name="start_date">
       </fieldset>
       <fieldset>
-          <label for="isbn">ISBN: </label>
-          <input id="isbn" type="text" name="isbn">
+          <label for="is_supervisor">Supervisor: </label>
+          <input id="is_supervisor" type="number" name="is_supervisor">
       </fieldset>
       <fieldset>
-          <label for="location">Library: </label>
-          <select id="location" type="text" name="location">
-                {% for library in all_libraries %}
-                    <option value="{{ library.id }}">{{ library.title }}</option>
-                {% endfor %}
-          </select>
+          <label for="department_id">Department: </label>
+          <input id="department_id" type="text" name="department_id">
       </fieldset>
 
       <input type="submit" value="Add It" />
