@@ -16,3 +16,4 @@ urlpatterns = [
     path('employees/form', employee_form, name='employee_form'),
     path('training_program/form', training_program_form, name='training_program_form'),
 ]
+#url, method, name

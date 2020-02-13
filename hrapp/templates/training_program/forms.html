@@ -29,11 +29,7 @@
       </fieldset>
       <fieldset>
           <label for="capacity">Capacity: </label>
-          <select id="capacity" type="number" name="capacity">
-                {% for training_program in all_training_programs %}
-                    <option value="{{ training_program.id }}">{{ training_program.title }}</option>
-                {% endfor %}
-          </select>
+          <input id="capacity" type="number" name="capacity">
       </fieldset>
 
       <input type="submit" value="Add It" />
