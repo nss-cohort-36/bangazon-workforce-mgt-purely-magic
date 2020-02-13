@@ -21,7 +21,7 @@ def get_departments():
 
         return db_cursor.fetchall()
 
-# @login_required
+@login_required
 def employee_form(request):
     print("hi")
     if request.method == 'GET':

@@ -6,6 +6,7 @@ from hrapp.models import Department
 from ..connection import Connection
 
 
+@login_required
 def employee_list(request):
     if request.method == 'GET':
         with sqlite3.connect(Connection.db_path) as conn:
@@ -15,7 +16,7 @@ def employee_list(request):
             # TODO: Add to query: e.department,
             db_cursor.execute("""
             select
-                e.id,
+                e.id employee_id,
                 e.first_name,
                 e.last_name,
                 e.start_date,
@@ -31,7 +32,7 @@ def employee_list(request):
 
             for row in dataset:
                 employee = Employee()
-                employee.id = row['id']
+                employee.id = row['employee_id']
                 employee.first_name = row['first_name']
                 employee.last_name = row['last_name']
                 employee.start_date = row['start_date']
