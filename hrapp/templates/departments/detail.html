@@ -2,8 +2,12 @@
 
 {% block content %}
     <h1>{{ department.department_name }}</h1>
-    <h2>Employs</h2>
-
-    <div> {{ department.first_name }} {{ department.last_name }}</div>
+    <h2>Employs:</h2>
+     <ul>
+    {% for employee in employees %}
+        <li>{{ employee.first_name}} {{employee.last_name}}</li>
+    {% endfor %}
+    </ul>
+    {% comment %} <div> {{ department.first_name }} {{ department.last_name }}</div> {% endcomment %}
 
 {% endblock %}
