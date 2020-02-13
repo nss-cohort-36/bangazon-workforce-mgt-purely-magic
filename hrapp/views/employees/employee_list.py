@@ -1,10 +1,8 @@
-from ..connection import Connection
 import sqlite3
-from django.shortcuts import render, reverse, redirect
-from hrapp.models import Employee
-from hrapp.models import Department
 from ..connection import Connection
-
+from django.shortcuts import render, reverse, redirect
+from hrapp.models import Employee, Department
+from django.contrib.auth.decorators import login_required
 
 @login_required
 def employee_list(request):
@@ -44,7 +42,7 @@ def employee_list(request):
 
         template = 'employees/employees_list.html'
         context = {
-            'employees': all_employees
+            'all_employees': all_employees
         }
 
         return render(request, template, context)
@@ -63,8 +61,6 @@ def employee_list(request):
             VALUES (?, ?, ?, ?, ?)
             """,
             (form_data['first_name'], form_data['last_name'],
-                form_data['start_date'], form_data['is_supervisor'], form_data['department_id']
-                # request.user.department.id, form_data["location"]
-                ))
+                form_data['start_date'], form_data['is_supervisor'], form_data['department_id']))
 
             return redirect(reverse('hrapp:employees'))
