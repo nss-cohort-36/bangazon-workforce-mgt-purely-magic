@@ -11,7 +11,7 @@
     <h1>Employee Roster</h1>
 
 
-    <form action="{% url 'hrapp:employee_list' %}" method="post">
+    <form action="{% url 'hrapp:employees' %}" method="post">
       {% csrf_token %}
       <fieldset>
           <label for="first_name">First Name: </label>
@@ -27,15 +27,15 @@
       </fieldset>
       <fieldset>
           <label for="is_supervisor">Is a Supervisor: </label>
-          <input id="is_supervisor" type="radio" value="Yes">
+          <input id="is_supervisor" type="radio" value="True" name='is_supervisor'>
           <label for="is_supervisor">Is NOT a Supervisor: </label>
-          <input id="is_supervisor" type="radio" name="No">
+          <input id="is_supervisor" type="radio" value="False" name='is_supervisor'>
       </fieldset>
       <fieldset>
           <label for="department">Department: </label>
-          <select id="department" type="text" name="department">
+          <select id="department" type="text" name="department_id">
                 {% for department in all_departments %}
-                    <option value="{{ department.id }}">{{ department.name }}</option>
+                    <option value="{{ department.id }}">{{ department.department_name }}</option>
                 {% endfor %}
           </select>
       </fieldset>
