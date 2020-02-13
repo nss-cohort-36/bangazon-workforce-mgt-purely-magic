@@ -14,7 +14,7 @@
   <form action="{% url 'hrapp:employee_detail' employee.id %}" method="POST">
     {% csrf_token %}
     <input type="hidden" name="actual_method" value="DELETE">
-    <button>Delete</button>
+    <button>Terminate</button>
 </form>
 
   </body>
