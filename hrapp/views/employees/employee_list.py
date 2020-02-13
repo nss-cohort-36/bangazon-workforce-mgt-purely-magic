@@ -15,7 +15,7 @@ def employee_list(request):
             # TODO: Add to query: e.department,
             db_cursor.execute("""
             select
-                e.id,
+                e.id employee_id,
                 e.first_name,
                 e.last_name,
                 e.start_date,
