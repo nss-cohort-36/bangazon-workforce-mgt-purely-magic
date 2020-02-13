@@ -14,14 +14,13 @@ def get_employee(employee_id):
 
         db_cursor.execute("""
         SELECT
-            au.id,
-            au.first_name,
-            au.last_name,
+            e.id,
+            e.first_name,
+            e.last_name,
             d.department_name
         FROM hrapp_employee e
-        JOIN auth_user au ON e.user_id = au.id
         JOIN hrapp_department d ON e.department_id = d.id
-        WHERE l.id = ?
+        WHERE e.id = ?
         """, (employee_id,))
 
         return db_cursor.fetchone()
@@ -31,7 +30,7 @@ def employee_details(request, employee_id):
     if request.method == 'GET':
         employee = get_employee(employee_id)
 
-        template = 'employees/employee_details.html'
+        template = 'employees/employee_detail.html'
         context = {
             'employee': employee
         }

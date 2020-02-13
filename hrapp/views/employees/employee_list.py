@@ -31,7 +31,7 @@ def employee_list(request):
 
             for row in dataset:
                 employee = Employee()
-                employee.id = row['id']
+                employee.id = row['employee_id']
                 employee.first_name = row['first_name']
                 employee.last_name = row['last_name']
                 employee.start_date = row['start_date']
