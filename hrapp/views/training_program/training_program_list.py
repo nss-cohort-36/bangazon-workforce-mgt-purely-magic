@@ -13,7 +13,8 @@ def training_program_list(request):
             db_cursor.execute("""
             select
                 tp.id,
-                tp.title,
+                tp.name,
+                tp.description,
                 tp.start_date,
                 tp.end_date,
                 tp.capacity
@@ -26,7 +27,8 @@ def training_program_list(request):
             for row in dataset:
                 trainingprogram = TrainingProgram()
                 trainingprogram.id = row['id']
-                trainingprogram.title = row['title']
+                trainingprogram.title = row['name']
+                trainingprogram.description = row['description']
                 trainingprogram.start_date = row['start_date']
                 trainingprogram.end_date = row['end_date']
                 trainingprogram.capacity = row['capacity']
@@ -49,11 +51,11 @@ def training_program_list(request):
             db_cursor.execute("""
             INSERT INTO hrapp_trainingprogram
             (
-            title, start_date, end_date, capacity 
+            name, description, start_date, end_date, capacity 
             )
-            VALUES (?, ?, ?, ?)
+            VALUES (?, ?, ?, ?, ?)
             """,
-            (form_data['title'], form_data['start_date'],
+            (form_data['name'], form_data['description'], form_data['start_date'],
             form_data['end_date'], form_data['capacity']))
 
     return redirect(reverse('hrapp:training_program'))

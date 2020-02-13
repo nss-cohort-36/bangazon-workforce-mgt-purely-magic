@@ -3,7 +3,8 @@ from django.urls import reverse
 
 class TrainingProgram(models.Model):
 
-    title = models.CharField(max_length=20)
+    name = models.CharField(max_length=20)
+    description = models.CharField(max_length=20)
     start_date = models.DateField()
     end_date = models.DateField()
     capacity = models.IntegerField()
