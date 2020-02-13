@@ -12,8 +12,8 @@
     <form action="{% url 'hrapp:training_program' %}" method="post">
       {% csrf_token %}
       <fieldset>
-          <label for="title">Title: </label>
-          <input id="title" type="text" name="title">
+          <label for="name">Name: </label>
+          <input id="name" type="text" name="name">
       </fieldset>
       <fieldset>
           <label for="description">Description: </label>
