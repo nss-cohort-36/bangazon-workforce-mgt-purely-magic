@@ -2,7 +2,7 @@
 # this module handles listing all computers
 
 import sqlite3
-from django.shortcuts import render
+from django.shortcuts import render, reverse, redirect
 from hrapp.models import Computer
 from ..connection import Connection
 from hrapp.models import model_factory
@@ -42,3 +42,21 @@ def computer_list(request):
         }
         # Then the render() method is invoked. That method takes the HTTP request as the first argument, the template to be used as the second argument, and then a dictionary containing the data to be used in the template. (Nashville Software School, Ch 3 Documentation)
         return render(request, template, context)
+
+    elif request.method == 'POST':
+        form_data = request.POST
+
+        with sqlite3.connect(Connection.db_path) as conn:
+            db_cursor = conn.cursor()
+
+            db_cursor.execute("""
+            INSERT INTO hrapp_computer
+            (
+                make, purchase_date, decommission_date
+            )
+            VALUES (?, ?, ?)
+            """, 
+            (form_data['make'], form_data['purchase_date'],
+            form_data['decommission_date']))
+
+        return redirect(reverse('hrapp:computers'))
