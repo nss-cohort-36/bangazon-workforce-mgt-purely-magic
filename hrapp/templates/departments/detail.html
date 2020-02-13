@@ -4,7 +4,7 @@
     <h1>{{ department.department_name }}</h1>
     <h2>Employs:</h2>
      <ul>
-    {% for employee in employees %}
+    {% for employee in department_employees %}
         <li>{{ employee.first_name}} {{employee.last_name}}</li>
     {% endfor %}
     </ul>

@@ -6,6 +6,29 @@ from hrapp.models import Department, Employee
 from hrapp.models import model_factory
 from ..connection import Connection
 
+def employee_department_list(department_id):
+    with sqlite3.connect(Connection.db_path) as conn:
+
+        conn.row_factory = model_factory(Employee)
+
+        db_cursor = conn.cursor()
+        db_cursor.execute("""
+        SELECT
+            d.id department_Id,
+            d.department_name,
+            d.budget,
+            e.first_name,
+            e.last_name,
+            e.start_date,
+            e.department_id
+        FROM hrapp_department d 
+        JOIN hrapp_employee e ON d.id = e.department_id
+        WHERE d.id = ?
+        """, (department_id,))
+
+        return db_cursor.fetchall()
+        
+
 
 def get_department(department_id):
     with sqlite3.connect(Connection.db_path) as conn:
@@ -32,10 +55,12 @@ def get_department(department_id):
 def department_details(request, department_id):
     if request.method == 'GET':
         department = get_department(department_id)
+        department_employees = employee_department_list(department_id)
 
         template = 'departments/detail.html'
         context = {
-            'department': department
+            'department': department,
+            'department_employees': department_employees
         }
 
         return render(request, template, context)
