@@ -4,10 +4,10 @@
 <h1>Employees</h1>
 
 <ol>
-{% for employee in employees %}
+{% for employee in all_employees %}
     <li>
-        <p>{{ employee.first_name }} {{ employee.last_name }} -
-        {{ employee.department_name }}</p>
+        <a href="{% url 'hrapp:employee_detail' employee.id %}"> {{ employee.first_name }} {{ employee.last_name }} </a>
+        <p>{{ employee.department_name }} </p>
     </li>
 {% endfor %}
 </ol>
