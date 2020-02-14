@@ -12,5 +12,6 @@ from .computers.computer_form import computer_form
 from .computers.computer_detail import computer_details
 from .departments.details import department_details
 from .departments.form import department_form
+from .training_program.detail import training_program_details
 
 
