@@ -10,5 +10,12 @@
     <h2>Department: {{ employee.department_name }}</h2>
     <h2>Current Computer: </h2>
     <h2>Training Programs: </h2>
+
+  <form action="{% url 'hrapp:employee_detail' employee.id %}" method="POST">
+    {% csrf_token %}
+    <input type="hidden" name="actual_method" value="DELETE">
+    <button>Terminate</button>
+</form>
+
   </body>
 </html>
