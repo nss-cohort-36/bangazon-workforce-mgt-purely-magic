@@ -30,7 +30,7 @@ def training_program_details(request, training_program_id):
     if request.method == 'GET':
         training_program = get_training_program(training_program_id)
 
-        template = 'training_programs/detail.html'
+        template = 'training_program/detail.html'
         context = {
             'training_program': training_program
         }
