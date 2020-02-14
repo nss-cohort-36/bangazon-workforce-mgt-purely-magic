@@ -1,46 +1,46 @@
 [
-    {
-      "model": "hrapp.TrainingProgram",
-      "pk": 1,
-      "fields": {
-        "name": "Code of Business Conduct",
-        "description": "Code of Business Conduct",
-        "start_date": "2020-01-03",
-        "end_date": "2020-01-05",
-        "capacity": 30
-      }
-    },
-    {
-      "model": "hrapp.TrainingProgram",
-      "pk": 2,
-      "fields": {
-        "name": "Ergonomics 101",
-        "description": "Code of Business Now",
-        "start_date": "2020-02-20",
-        "end_date": "2020-02-24",
-        "capacity": 60
-      }
-    },
-    {
-      "model": "hrapp.TrainingProgram",
-      "pk": 3,
-      "fields": {
-        "name": "HTML and You",
-        "description": "Tomorrow never dies",
-        "start_date": "2020-03-03",
-        "end_date": "2020-03-05",
-        "capacity": 15
-      }
-    },
-    {
-      "model": "hrapp.TrainingProgram",
-      "pk": 4,
-      "fields": {
-        "name": "Django Unchained",
-        "description": "Tomorrow never dies Part 2",
-        "start_date": "2020-02-12",
-        "end_date": "2020-02-14",
-        "capacity": 5
-      }
+  {
+    "model": "hrapp.TrainingProgram",
+    "pk": 1,
+    "fields": {
+      "name": "Code of Business Conduct",
+      "description": "Code of Business Conduct",
+      "start_date": "2020-01-03",
+      "end_date": "2020-01-05",
+      "capacity": 30
     }
-  ]
+  },
+  {
+    "model": "hrapp.TrainingProgram",
+    "pk": 2,
+    "fields": {
+      "name": "Ergonomics 101",
+      "description": "Code of Business Now",
+      "start_date": "2020-02-20",
+      "end_date": "2020-02-24",
+      "capacity": 60
+    }
+  },
+  {
+    "model": "hrapp.TrainingProgram",
+    "pk": 3,
+    "fields": {
+      "name": "HTML and You",
+      "description": "Tomorrow never dies",
+      "start_date": "2020-03-03",
+      "end_date": "2020-03-05",
+      "capacity": 15
+    }
+  },
+  {
+    "model": "hrapp.TrainingProgram",
+    "pk": 4,
+    "fields": {
+      "name": "Django Unchained",
+      "description": "Tomorrow never dies Part 2",
+      "start_date": "2020-02-12",
+      "end_date": "2020-02-14",
+      "capacity": 5
+    }
+  }
+]

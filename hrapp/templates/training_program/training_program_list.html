@@ -1,22 +1,18 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Training Programs</title>
-  </head>
-  <body>
+{% extends 'shared/base.html' %}
+{% block content %}
     <h1></h1>
 
     <ol>
     {% for training_program in all_training_programs%}
         <li>
-            {{training_program.title }}
-             {{training_program.start_date}} - {{training_program.end_date}}
-            {{training_program.capacity}}
-        </li>
+        <a href="{% url 'hrapp:training_program' training_program.id %}"> {{ training_program.name }} <a> 
+        <p>{{ training_program.description }}</p> 
+        <p>Start Date: {{training_program.start_date}} End Date{{training_program.end_date}}</p>    
+        <p>Capacity: {{training_program.capacity}}</p> 
+    </li>
     {% endfor %}
     </ol>
     <a href="{% url 'hrapp:training_program_form' %}">Add New Training Program</a>
-  </body>
-</html>
+{% endblock %}
+
+
