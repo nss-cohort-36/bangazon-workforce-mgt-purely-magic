@@ -17,6 +17,17 @@
           <label for="decommission_date">Decommission Date: </label>
           <input id="decommission_date" type="date" name="decommission_date">
       </fieldset>
-      <input type="submit" value="Create" />
+      <fieldset>
+          <label for="employees">Employees: </label>
+          <select id="employees" type="text" name="employees">
+                {% for employee in all_employees %}
+                    <option value="{{ employee.id }}">{{ employee.first_name }} {{ employee.last_name }}</option>
+                {% endfor %}
+          </select>
+      </fieldset>
+      
+          <input type="submit" value="Create" />
+
+      {% comment %} <input type="submit" value="Create" /> {% endcomment %}
     </form>
   {% endblock %}
