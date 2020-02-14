@@ -21,7 +21,8 @@ def get_training_program(training_program_id):
                 tp.end_date,
                 tp.capacity
             from hrapp_trainingprogram tp
-            """)
+        WHERE tp.id = ?
+        """, (training_program_id,))
 
         return db_cursor.fetchone()
 

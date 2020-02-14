@@ -20,6 +20,6 @@ urlpatterns = [
     path('employees/<int:employee_id>/', employee_details, name='employee_detail'),
     
     path('computers/<int:computer_id>/', computer_details, name='computer_details'),
-    path('training_programs/<int:training_program_id>/', training_program_details, name='training_program_detail'),
+    path('training_programs/<int:training_program_id>/', training_program_details, name='training_program'),
 ]
 #url, method, name
