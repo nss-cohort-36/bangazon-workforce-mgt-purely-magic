@@ -1,0 +1,10 @@
+{% extends 'shared/base.html' %}
+
+{% block content %}
+    <h1>{{ training_program.name }}</h1>
+    <h2>{{ training_program.description }}</h2>
+        <h2>{{ training_program.start_date }}</h2> - <h2>{{ training_program.end_date }}</h2>
+
+    <div>Capacity {{ training_program.capacity }}</div>
+{% endblock %}
+  
