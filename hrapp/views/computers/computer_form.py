@@ -5,7 +5,6 @@ from hrapp.models import Employee
 from hrapp.models import Computer
 from hrapp.models import model_factory
 from ..connection import Connection
-# from .details import get_computer
 
 def get_employees():
     with sqlite3.connect(Connection.db_path) as conn:

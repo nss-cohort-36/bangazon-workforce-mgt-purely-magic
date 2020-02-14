@@ -43,7 +43,7 @@ def computer_list(request):
         # Then the render() method is invoked. That method takes the HTTP request as the first argument, the template to be used as the second argument, and then a dictionary containing the data to be used in the template. (Nashville Software School, Ch 3 Documentation)
         return render(request, template, context)
 
-    elif request.method == 'POST':
+    if request.method == 'POST':
         form_data = request.POST
 
         with sqlite3.connect(Connection.db_path) as conn:
@@ -60,3 +60,5 @@ def computer_list(request):
             form_data['decommission_date']))
 
         return redirect(reverse('hrapp:computers'))
+
+        
